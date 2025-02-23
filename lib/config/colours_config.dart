@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColoursConfig {
-  static double alpha = 1.0;
-
+  static double alpha = 0.5;
   static Color primaryWhite = Color(0xFFCADCED);
 
   static List pieColors = [

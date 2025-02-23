@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import '../config.dart';
 import '../widgets.dart';
 
-class CreditCardWidget extends StatelessWidget {
-  const CreditCardWidget({super.key});
+class CreditCardsWidget extends StatelessWidget {
+  const CreditCardsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return _CreditCardWidgetView();
+    return _CreditCardsWidgetView();
   }
 }
 
-class _CreditCardWidgetView extends StatelessWidget {
+class _CreditCardsWidgetView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = SizeConfig.getHeight(context);
@@ -84,7 +84,7 @@ class _CreditCardWidgetView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    CardWidget(lastFourDigits: '5678', cardType: 'Platinum Card'),
+                    CreditCardWidget(lastFourDigits: '5678', cardType: 'Platinum Card'),
                   ],
                 ),
               );

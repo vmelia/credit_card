@@ -22,7 +22,7 @@ class _DashboardPageState extends State<DashboardPage> {
           child: Column(
             children: <Widget>[
               SizedBox(height: height / 8, child: AppBarWidget(text: "Vince's Account")),
-              Expanded(child: CreditCardWidget()),
+              Expanded(child: CreditCardsWidget()),
               Expanded(child: ExpensesWidget()),
             ],
           ),

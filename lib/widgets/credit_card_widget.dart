@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../config.dart';
 
-class CardWidget extends StatelessWidget {
+class CreditCardWidget extends StatelessWidget {
   final String lastFourDigits;
   final String cardType;
-  const CardWidget({super.key, required this.lastFourDigits, required this.cardType});
+  const CreditCardWidget({super.key, required this.lastFourDigits, required this.cardType});
 
   @override
   Widget build(BuildContext context) {
