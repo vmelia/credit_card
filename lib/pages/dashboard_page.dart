@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import '../config.dart';
 import '../widgets.dart';
 
-class DashboardPage extends StatefulWidget {
+class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
-
+  
   @override
-  _DashboardPageState createState() => _DashboardPageState();
+  Widget build(BuildContext context) {
+    return _DashboardPageView();
+  }
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _DashboardPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = SizeConfig.getHeight(context);

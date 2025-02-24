@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import '../config.dart';
 import '../widgets.dart';
 
-class ExpensesWidget extends StatefulWidget {
+class ExpensesWidget extends StatelessWidget {
   const ExpensesWidget({super.key});
 
   @override
-  _ExpensesWidgetState createState() => _ExpensesWidgetState();
+  Widget build(BuildContext context) {
+    return _ExpensesWidgetView();
+  }
 }
 
-class _ExpensesWidgetState extends State<ExpensesWidget> {
+class _ExpensesWidgetView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = SizeConfig.getHeight(context);
@@ -26,7 +28,10 @@ class _ExpensesWidgetState extends State<ExpensesWidget> {
             children: <Widget>[
               Container(
                 margin: EdgeInsets.only(left: width / 20),
-                child: Text("Monthly Expenses", style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 20))),
+                child: Text(
+                  "Monthly Expenses",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 20)),
+                ),
               ),
               Container(
                 width: width / 3.5,
