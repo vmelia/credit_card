@@ -15,7 +15,7 @@ class DashboardPage extends StatelessWidget {
 class _DashboardPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var height = SizeConfig.getHeight(context);
+    var height = context.getHeight();
 
     return Scaffold(
       body: Container(

@@ -15,8 +15,8 @@ class ExpensesWidget extends StatelessWidget {
 class _ExpensesWidgetView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var height = SizeConfig.getHeight(context);
-    var width = SizeConfig.getWidth(context);
+    var height = context.getHeight();
+    var width = context.getWidth();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,7 +30,7 @@ class _ExpensesWidgetView extends StatelessWidget {
                 margin: EdgeInsets.only(left: width / 20),
                 child: Text(
                   "Monthly Expenses",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 20)),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: context.getFontSize(20)),
                 ),
               ),
               Container(
@@ -40,12 +40,12 @@ class _ExpensesWidgetView extends StatelessWidget {
                   children: <Widget>[
                     ArrowButtonWidget(
                       margin: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-                      icon: Icon(Icons.arrow_back_ios, size: SizeConfig.getFontSize(context, 17)),
+                      icon: Icon(Icons.arrow_back_ios, size: context.getFontSize(17)),
                     ),
                     Padding(padding: EdgeInsets.only(left: width / 50)),
                     ArrowButtonWidget(
                       margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-                      icon: Icon(Icons.arrow_forward_ios, size: SizeConfig.getFontSize(context, 17)),
+                      icon: Icon(Icons.arrow_forward_ios, size: context.getFontSize(17)),
                     ),
                   ],
                 ),
@@ -76,7 +76,7 @@ class _ExpensesWidgetView extends StatelessWidget {
                                     shape: BoxShape.circle,
                                   ),
                                 ),
-                                Text(data['name'], style: TextStyle(fontSize: SizeConfig.getFontSize(context, 16))),
+                                Text(data['name'], style: TextStyle(fontSize: context.getFontSize(16))),
                               ],
                             ),
                           );

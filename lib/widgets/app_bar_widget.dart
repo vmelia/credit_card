@@ -8,7 +8,7 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = SizeConfig.getWidth(context);
+    var width = context.getWidth();
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: width / 20),

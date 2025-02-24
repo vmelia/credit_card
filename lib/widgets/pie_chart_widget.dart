@@ -49,7 +49,7 @@ class _PieChartWidgetView extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "£${DataProvider.total}",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 22)),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: context.getFontSize(22)),
                     ),
                   ),
                 ),

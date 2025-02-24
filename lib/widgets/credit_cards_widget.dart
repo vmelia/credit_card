@@ -15,15 +15,15 @@ class CreditCardsWidget extends StatelessWidget {
 class _CreditCardsWidgetView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var height = SizeConfig.getHeight(context);
-    var width = SizeConfig.getWidth(context);
+    var height = context.getHeight();
+    var width = context.getWidth();
 
     return Column(
       children: <Widget>[
         Container(
           margin: EdgeInsets.symmetric(horizontal: width / 20),
           alignment: Alignment.centerLeft,
-          child: Text("Card Selected", style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 20))),
+          child: Text("Card Selected", style: TextStyle(fontWeight: FontWeight.bold, fontSize: context.getFontSize(20))),
         ),
         Expanded(
           child: ListView.builder(

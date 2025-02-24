@@ -9,8 +9,8 @@ class CreditCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = SizeConfig.getHeight(context);
-    var width = SizeConfig.getWidth(context);
+    var height = context.getHeight();
+    var width = context.getWidth();
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: width / 20, vertical: height / 20),
@@ -37,17 +37,17 @@ class CreditCardWidget extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         "**** **** **** ",
-                        style: TextStyle(fontSize: SizeConfig.getFontSize(context, 20), fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: context.getFontSize(20), fontWeight: FontWeight.w500),
                       ),
                       Text(
                         lastFourDigits,
-                        style: TextStyle(fontSize: SizeConfig.getFontSize(context, 30), fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: context.getFontSize(30), fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
                   Text(
                     cardType,
-                    style: TextStyle(fontSize: SizeConfig.getFontSize(context, 15), fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: context.getFontSize(15), fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

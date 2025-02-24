@@ -1,16 +1,16 @@
 import 'package:flutter/widgets.dart';
 
-class SizeConfig {
-  static double getHeight(context) {
-    return MediaQuery.of(context).size.height;
+extension SizeConfig on BuildContext{
+  double getHeight() {
+    return MediaQuery.of(this).size.height;
   }
 
-  static double getWidth(context) {
-    return MediaQuery.of(context).size.width;
+  double getWidth() {
+    return MediaQuery.of(this).size.width;
   }
 
-  static double getFontSize(context, double size) {
-    var width = SizeConfig.getWidth(context);
+  double getFontSize(double size) {
+    var width = getWidth();
     return size * width / 414;
   }
 }
