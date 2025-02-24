@@ -15,9 +15,6 @@ class _ExpensesWidgetState extends State<ExpensesWidget> {
   Widget build(BuildContext context) {
     var height = SizeConfig.getHeight(context);
     var width = SizeConfig.getWidth(context);
-    double fontSize(double size) {
-      return size * width / 414;
-    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,7 +26,7 @@ class _ExpensesWidgetState extends State<ExpensesWidget> {
             children: <Widget>[
               Container(
                 margin: EdgeInsets.only(left: width / 20),
-                child: Text("Monthly Expenses", style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize(20))),
+                child: Text("Monthly Expenses", style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 20))),
               ),
               Container(
                 width: width / 3.5,
@@ -38,12 +35,12 @@ class _ExpensesWidgetState extends State<ExpensesWidget> {
                   children: <Widget>[
                     ArrowButtonWidget(
                       margin: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-                      icon: Icon(Icons.arrow_back_ios, size: fontSize(17)),
+                      icon: Icon(Icons.arrow_back_ios, size: SizeConfig.getFontSize(context, 17)),
                     ),
                     Padding(padding: EdgeInsets.only(left: width / 50)),
                     ArrowButtonWidget(
                       margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-                      icon: Icon(Icons.arrow_forward_ios, size: fontSize(17)),
+                      icon: Icon(Icons.arrow_forward_ios, size: SizeConfig.getFontSize(context, 17)),
                     ),
                   ],
                 ),
@@ -60,7 +57,7 @@ class _ExpensesWidgetState extends State<ExpensesWidget> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children:
-                        category.map((data) {
+                        DataProvider.category.map((data) {
                           return Container(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                             child: Row(
@@ -70,11 +67,11 @@ class _ExpensesWidgetState extends State<ExpensesWidget> {
                                   width: 10,
                                   height: 10,
                                   decoration: BoxDecoration(
-                                    color: ColoursConfig.pieColors[category.indexOf(data)],
+                                    color: ColoursConfig.pieColors[DataProvider.category.indexOf(data)],
                                     shape: BoxShape.circle,
                                   ),
                                 ),
-                                Text(data['name'], style: TextStyle(fontSize: fontSize(16))),
+                                Text(data['name'], style: TextStyle(fontSize: SizeConfig.getFontSize(context, 16))),
                               ],
                             ),
                           );
@@ -82,7 +79,13 @@ class _ExpensesWidgetState extends State<ExpensesWidget> {
                   ),
                 ),
               ),
-              Expanded(flex: 6, child: Padding(padding: EdgeInsets.only(right: 10), child: PieChartWidget())),
+              Expanded(
+                flex: 6,
+                child: Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: PieChartWidget(category: DataProvider.category),
+                ),
+              ),
             ],
           ),
         ),

@@ -3,30 +3,22 @@ import 'package:flutter/material.dart';
 
 import '../config.dart';
 
-class PieChartWidget extends StatefulWidget {
-  const PieChartWidget({super.key});
-
-  @override
-  _PieChartWidgetState createState() => _PieChartWidgetState();
-}
-
-class _PieChartWidgetState extends State<PieChartWidget> with SingleTickerProviderStateMixin {
-  double total = 0;
-  @override
-  void initState() {
-    super.initState();
-    for (var e in category) {
-      total += e['amount'];
-    }
-  }
+class PieChartWidget extends StatelessWidget {
+  final List category;
+  const PieChartWidget({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
-    var width = SizeConfig.getWidth(context);
-    double fontSize(double size) {
-      return size * width / 414;
-    }
+    return _PieChartWidgetView(category: category);
+  }
+}
 
+class _PieChartWidgetView extends StatelessWidget {
+  final List category;
+  const _PieChartWidgetView({required this.category});
+
+  @override
+  Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraint) {
         return Container(
@@ -55,7 +47,10 @@ class _PieChartWidgetState extends State<PieChartWidget> with SingleTickerProvid
                     boxShadow: [BoxShadow(spreadRadius: 3, blurRadius: 5, offset: Offset(3, 3), color: Colors.black38)],
                   ),
                   child: Center(
-                    child: Text("£$total", style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize(22))),
+                    child: Text(
+                      "£${DataProvider.total}",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 22)),
+                    ),
                   ),
                 ),
               ),

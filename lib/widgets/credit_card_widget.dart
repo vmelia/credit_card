@@ -11,9 +11,6 @@ class CreditCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = SizeConfig.getHeight(context);
     var width = SizeConfig.getWidth(context);
-    double fontSize(double size) {
-      return size * width / 414;
-    }
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: width / 20, vertical: height / 20),
@@ -38,13 +35,19 @@ class CreditCardWidget extends StatelessWidget {
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      Text("**** **** **** ", style: TextStyle(fontSize: fontSize(20), fontWeight: FontWeight.w500)),
-                      Text(lastFourDigits, style: TextStyle(fontSize: fontSize(30), fontWeight: FontWeight.w500)),
+                      Text(
+                        "**** **** **** ",
+                        style: TextStyle(fontSize: SizeConfig.getFontSize(context, 20), fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        lastFourDigits,
+                        style: TextStyle(fontSize: SizeConfig.getFontSize(context, 30), fontWeight: FontWeight.w500),
+                      ),
                     ],
                   ),
                   Text(
                     cardType,
-                    style: TextStyle(fontSize: fontSize(15), fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: SizeConfig.getFontSize(context, 15), fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

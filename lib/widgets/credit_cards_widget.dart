@@ -17,16 +17,13 @@ class _CreditCardsWidgetView extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = SizeConfig.getHeight(context);
     var width = SizeConfig.getWidth(context);
-    double fontSize(double size) {
-      return size * width / 414;
-    }
 
     return Column(
       children: <Widget>[
         Container(
           margin: EdgeInsets.symmetric(horizontal: width / 20),
           alignment: Alignment.centerLeft,
-          child: Text("Card Selected", style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize(20))),
+          child: Text("Card Selected", style: TextStyle(fontWeight: FontWeight.bold, fontSize: SizeConfig.getFontSize(context, 20))),
         ),
         Expanded(
           child: ListView.builder(
